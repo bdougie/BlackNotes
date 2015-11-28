@@ -1,53 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
+import React from 'react-native';
+import Main from './App/Components/Main';
 
-var React = require('react-native');
-var {
+let {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  NavigatorIOS,
 } = React;
 
-var BlackNotes = React.createClass({
-  render: function() {
+let styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: '#111111'
+  },
+});
+
+class BlackNotes extends React.Component {
+  createNewNote() {
+    this.props.navigator.push({
+      component: CreateNote,
+      title: 'New Note'
+    })
+  }
+
+  render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <NavigatorIOS
+      style={styles.container}
+        initialRoute={{
+          title: 'Bloc Notes',
+          component: Main,
+        }} />
     );
   }
-});
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+};
 
 AppRegistry.registerComponent('BlackNotes', () => BlackNotes);
+
