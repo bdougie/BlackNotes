@@ -13,24 +13,21 @@ let {
 let styles = StyleSheet.create({
   container: {
   },
-  button: {
+  footerContainer: {
     flex: 1,
-    padding: 15,
-    height: 46,
-    backgroundColor: "#555555",
-    borderColor: "#555555",
-    borderWidth: 1,
-    justifyContent: "center"
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   buttonText: {
     fontSize: 18,
-    color: "#ffffff",
-    alignSelf: "center"
+    color: 'white'
   },
-  footerContainer: {
-    flex: 0,
-    flexDirection: 'column',
+  button: {
+    height: 60,
+    backgroundColor: '#48BBEC',
+    flex: 3,
     alignItems: 'center',
+    justifyContent: 'center'
   },
 });
 
@@ -39,7 +36,7 @@ class Main extends React.Component{
     super(props);
   }
 
-  onButtonPress() {
+  createNote() {
     this.props.navigator.push({
       title: 'New Note',
       component: CreateNote,
@@ -51,7 +48,7 @@ class Main extends React.Component{
       <View style={styles.footerContatiner}>
         <TouchableHighlight
           style={styles.button}
-          onPress={this.onButtonPress.bind(this)}
+          onPress={this.createNote.bind(this)}
           underlayColor="#9BAAF3">
             <Text style={styles.buttonText}>Create Note</Text>
         </TouchableHighlight>
@@ -63,7 +60,7 @@ class Main extends React.Component{
     return (
       <View style={styles.container}>
         <Text></Text>
-        <Notes />
+        <Notes navigator={this.props.navigator} />
         {this.footer()}
       </View>
     )
@@ -72,4 +69,3 @@ class Main extends React.Component{
 };
 
 export default Main;
-

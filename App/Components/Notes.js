@@ -1,4 +1,5 @@
 import React from 'react-native';
+import ViewNote from './ViewNote';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
 
@@ -32,6 +33,7 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  touchableButton: {},
 });
 
 class Notes extends React.Component{
@@ -44,6 +46,10 @@ class Notes extends React.Component{
       note: '',
       error: ''
     }
+  }
+
+  componentDidUpdate() {
+    this.fetchData();
   }
 
   componentDidMount() {
@@ -69,22 +75,25 @@ class Notes extends React.Component{
     );
   }
 
-  addNote() {
-    api.addNote();
-  }
-
   viewNote() {
-    console.log('clicked');
+    this.props.navigator.push({
+      title: 'The Note',
+      component: ViewNote,
+    });
   }
 
-  renderRow(rowData){
+  renderRow(rowData) {
     return (
-      <View>
-        <View style={styles.rowContainer}>
-          <Text style={styles.note}> {rowData} </Text>
+      <TouchableHighlight 
+        underlayColor='rgba(192,192,192,1,0.6)'
+        onPress={this.viewNote}>
+        <View>
+          <View style={styles.rowContainer}>
+            <Text style={styles.note}> {rowData} </Text>
+          </View>
+          <Separator />
         </View>
-        <Separator />
-      </View>
+      </TouchableHighlight>
     )
   }
 
