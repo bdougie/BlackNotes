@@ -29,7 +29,7 @@ class BlackNotes extends React.Component {
       <NavigatorIOS
       style={styles.container}
         initialRoute={{
-          title: 'Bloc Notes',
+          title: 'Black Notes',
           component: Main,
         }} />
     );

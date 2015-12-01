@@ -23,7 +23,7 @@ let styles = StyleSheet.create({
     color: 'white'
   },
   button: {
-    height: 60,
+    height: 80,
     backgroundColor: '#48BBEC',
     flex: 3,
     alignItems: 'center',

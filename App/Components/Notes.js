@@ -16,9 +16,9 @@ let styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     marginTop: 50,
-    flexDirection: 'column',
+    height: 590,
   },
   rowContainer: {
     padding: 10,

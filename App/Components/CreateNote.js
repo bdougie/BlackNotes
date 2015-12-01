@@ -23,7 +23,7 @@ let styles = StyleSheet.create({
     backgroundColor: '#48BBEC',
     flex: 3,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   searchInput: {
     alignItems: 'stretch',
