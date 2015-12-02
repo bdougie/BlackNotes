@@ -2,6 +2,7 @@ import React from 'react-native';
 import ViewNote from './ViewNote';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
+import Swipeout from 'react-native-swipeout';
 
 let {
   View,
@@ -36,6 +37,12 @@ let styles = StyleSheet.create({
   touchableButton: {},
 });
 
+let swipeBtns = [{
+  text: 'Delete',
+  backgroundColor: 'red',
+  underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
+}];
+
 class Notes extends React.Component{
   constructor(props){
     super(props);
@@ -54,6 +61,10 @@ class Notes extends React.Component{
 
   componentDidMount() {
     this.fetchData();
+  }
+
+  deleteNote() {
+    console.log('deleted')
   }
 
   fetchData() {
@@ -84,16 +95,21 @@ class Notes extends React.Component{
 
   renderRow(rowData) {
     return (
-      <TouchableHighlight 
-        underlayColor='rgba(192,192,192,1,0.6)'
-        onPress={this.viewNote}>
-        <View>
-          <View style={styles.rowContainer}>
-            <Text style={styles.note}> {rowData} </Text>
+      <Swipeout right={swipeBtns}
+        autoClose={true}
+        onPress={() => this.deleteNote}
+        backgroundColor= 'transparent'>
+        <TouchableHighlight
+          underlayColor='rgba(192,192,192,1,0.6)'
+          onPress={this.viewNote}>
+          <View>
+            <View style={styles.rowContainer}>
+              <Text style={styles.note}> {rowData} </Text>
+            </View>
+            <Separator />
           </View>
-          <Separator />
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </Swipeout>
     )
   }
 
