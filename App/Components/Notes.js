@@ -3,6 +3,7 @@ import ViewNote from './ViewNote';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
 import Swipeout from 'react-native-swipeout';
+import { findKey } from 'lodash';
 
 let {
   View,
