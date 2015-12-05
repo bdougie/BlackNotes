@@ -32,6 +32,7 @@ let styles = StyleSheet.create({
   },
   loading: {
     marginTop: 300,
+    marginBottom: 287,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -85,11 +86,12 @@ class Notes extends React.Component{
       text: 'Delete',
       backgroundColor: 'red',
       underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-      onPress: () => {debugger;}
+      onPress: () => { this.deleteNote(rowData) }
     }];
 
     return (
       <Swipeout right={swipeBtns}
+        autoClose='true'
         backgroundColor= 'transparent'>
         <TouchableHighlight
           underlayColor='rgba(192,192,192,1,0.6)'
@@ -106,8 +108,10 @@ class Notes extends React.Component{
   }
 
   deleteNote(rowData) {
-    debugger;
-    console.log('deleted')
+    api.deleteNote(rowData, this.noteId(rowData));
+    this.setState({
+      isLoading: true,
+    });
   }
 
   viewNote(rowData) {
@@ -120,7 +124,7 @@ class Notes extends React.Component{
       }
     });
   }
-  
+
   noteId(noteText) {
     let rawData = this.state.rawData;
     let invertedRawData = invert(rawData);
