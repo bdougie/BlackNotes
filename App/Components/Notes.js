@@ -86,22 +86,20 @@ class Notes extends React.Component{
     );
   }
 
-  viewNote() {
-    this.props.navigator.push({
-      title: 'The Note',
-      component: ViewNote,
-    });
-  }
-
   renderRow(rowData) {
+    var swipeBtns = [{
+      text: 'Delete',
+      backgroundColor: 'red',
+      underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
+      onPress: () => {debugger;}
+    }];
+
     return (
       <Swipeout right={swipeBtns}
-        autoClose={true}
-        onPress={() => this.deleteNote}
         backgroundColor= 'transparent'>
         <TouchableHighlight
           underlayColor='rgba(192,192,192,1,0.6)'
-          onPress={this.viewNote}>
+          onPress={this.viewNote.bind(this, rowData)} >
           <View>
             <View style={styles.rowContainer}>
               <Text style={styles.note}> {rowData} </Text>
@@ -113,6 +111,18 @@ class Notes extends React.Component{
     )
   }
 
+  deleteNote() {
+    debugger;
+  }
+
+  viewNote(rowData) {
+    this.props.navigator.push({
+      title: 'The Note',
+      component: ViewNote,
+      passProps: { noteData: rowData }
+    });
+  }
+
   render() {
     if (this.state.isLoading) {
       return this.renderLoadingView();
@@ -122,7 +132,7 @@ class Notes extends React.Component{
       <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderRow} />
+          renderRow={this.renderRow.bind(this)} />
       </View>
     )
   }

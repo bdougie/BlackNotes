@@ -25,6 +25,14 @@ let styles = StyleSheet.create({
 });
 
 class ViewNote extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      note: '',
+      error: '',
+    }
+  }
+
   handleChange() {
     console.log('noted')
   }
@@ -32,17 +40,21 @@ class ViewNote extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hola Mundo!</Text>
+        <Text>{this.props.noteData}</Text>
         <TextInput
         style={styles.input}
         value="WHTA?!"
-        onChange={this.handleChange.bind(this)}
-        placeholder="The Note"/>
+        onChange={this.handleChange.bind(this)} />
       </View>
     );
   }
 }
 
+ViewNote.propTypes = {
+  noteData: React.PropTypes.object.isRequired,
+}
+
 export default ViewNote;
+
 
 
