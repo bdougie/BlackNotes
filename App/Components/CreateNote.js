@@ -67,6 +67,7 @@ class CreateNote extends React.Component{
     return (
       <View style={styles.container}>
        <TextInput
+        autoFocus={true}
         style={styles.noteInput}
         value={this.state.note}
         onChange={this.handleChange.bind(this)}
