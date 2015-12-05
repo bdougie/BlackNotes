@@ -26,13 +26,12 @@ let styles = StyleSheet.create({
     padding: 10,
   },
   note: {
-    flex: 1,
+    flex: 2,
     fontSize: 22,
     padding: 15,
   },
   loading: {
-    marginTop: 300,
-    marginBottom: 287,
+    flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
   },

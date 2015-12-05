@@ -25,13 +25,13 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  searchInput: {
+  noteInput: {
     alignItems: 'stretch',
-    height: 60,
+    height: 600,
     padding: 10,
     fontSize: 18,
     color: '#111',
-    flex: 10
+    flex: 18
   },
 });
 
@@ -67,10 +67,10 @@ class CreateNote extends React.Component{
     return (
       <View style={styles.container}>
        <TextInput
-        style={styles.searchInput}
+        style={styles.noteInput}
         value={this.state.note}
         onChange={this.handleChange.bind(this)}
-        placeholder="New Note" />
+        placeholder="Start your note here..." />
         <TouchableHighlight
             style={styles.button}
             onPress={this.handleSubmit.bind(this)}

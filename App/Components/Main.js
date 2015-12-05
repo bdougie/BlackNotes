@@ -12,6 +12,7 @@ let {
 
 let styles = StyleSheet.create({
   container: {
+    flex: 1,
   },
   footerContainer: {
     flex: 1,
@@ -25,7 +26,7 @@ let styles = StyleSheet.create({
   button: {
     height: 80,
     backgroundColor: '#48BBEC',
-    flex: 3,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center'
   },

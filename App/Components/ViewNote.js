@@ -31,7 +31,7 @@ let styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     color: '#111',
-    flex: 10
+    flex: 18
   },
 });
 
