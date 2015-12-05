@@ -1,4 +1,5 @@
 import React from 'react-native';
+import api from './../Lib/Api';
 
 let {
   View,
@@ -13,14 +14,24 @@ let styles = StyleSheet.create({
     marginTop: 65,
     flex: 1,
   },
-  text: {
-    fontSize: 55,
-    color: 'red',
-    alignSelf: 'center',
+  buttonText: {
+    fontSize: 18,
+    color: 'white'
   },
-  input: {
-    color: 'white',
-    backgroundColor: 'red',
+  button: {
+    height: 60,
+    backgroundColor: '#48BBEC',
+    flex: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  searchInput: {
+    alignItems: 'stretch',
+    height: 60,
+    padding: 10,
+    fontSize: 18,
+    color: '#111',
+    flex: 10
   },
 });
 
@@ -33,25 +44,41 @@ class ViewNote extends React.Component{
     }
   }
 
-  handleChange() {
-    console.log('noted')
+  handleChange(e) {
+    this.setState({
+      note: e.nativeEvent.text
+    })
+  }
+
+  handleSubmit() {
+    let note = this.state.note;
+    this.setState({note:''});
+    api.updateNote(note, this.props.noteId)
+    this.props.navigator.pop();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.props.noteData}</Text>
-        <TextInput
-        style={styles.input}
-        value="WHTA?!"
-        onChange={this.handleChange.bind(this)} />
+       <TextInput
+            style={styles.searchInput}
+            value={this.props.noteText}
+            onChange={this.handleChange.bind(this)}
+            placeholder="New Note" />
+        <TouchableHighlight
+            style={styles.button}
+            onPress={this.handleSubmit.bind(this)}
+            underlayColor="#88D4F5">
+              <Text style={styles.buttonText}>Save</Text>
+        </TouchableHighlight>
       </View>
     );
   }
 }
 
 ViewNote.propTypes = {
-  noteData: React.PropTypes.object.isRequired,
+  noteText: React.PropTypes.string.isRequired,
+  noteId: React.PropTypes.string.isRequired,
 }
 
 export default ViewNote;

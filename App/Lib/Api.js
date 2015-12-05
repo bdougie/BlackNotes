@@ -1,23 +1,26 @@
+import Firebase from 'firebase';
+
+let url = 'https://blacknotes.firebaseio.com/testUser';
+let notesRef = new Firebase(url);
+let jsonURL = `${url}.json`;
+
 let api = {
   getNotes() {
-    let url = `https://blacknotes.firebaseio.com/testUser.json`;
-    return fetch(url).then((res) => res.json())
+    return fetch(jsonURL).then((res) => res.json())
   },
   addNote(text) {
-    let url = `https://blacknotes.firebaseio.com/testUser.json`;
-
-    return fetch(url, {
+    return fetch(jsonURL, {
       method: 'post',
       body: JSON.stringify(text)
-    }).then((res) => res.json());
+    })
+    .then(() => console.log('Note Added'))
+    .catch((error) => console.log(error));
   },
-  deleteNote(text) {
-    let url = `https://blacknotes.firebaseio.com/testUser.json`;
-
-    return fetch(url, {
-      method: 'delete',
-      body: JSON.stringify(text)
-    });
+  updateNote(text, id) {
+    notesRef.child(id).set(text);
+  },
+  deleteNote(text, id) {
+    notesRef.child(id).remove();
   }
 };
 

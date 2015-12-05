@@ -6,6 +6,7 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "firebase": "^2.3.2",
     "lodash": "^3.10.1",
     "react-native": "^0.15.0",
     "react-native-swipeout": "^2.1.0"

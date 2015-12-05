@@ -67,16 +67,16 @@ class CreateNote extends React.Component{
     return (
       <View style={styles.container}>
        <TextInput
-            style={styles.searchInput}
-            value={this.state.note}
-            onChange={this.handleChange.bind(this)}
-            placeholder="New Note" />
+        style={styles.searchInput}
+        value={this.state.note}
+        onChange={this.handleChange.bind(this)}
+        placeholder="New Note" />
         <TouchableHighlight
             style={styles.button}
             onPress={this.handleSubmit.bind(this)}
             underlayColor="#88D4F5">
-              <Text style={styles.buttonText}>Save</Text>
-          </TouchableHighlight>
+          <Text style={styles.buttonText}>Save</Text>
+        </TouchableHighlight>
       </View>
     );
   }
