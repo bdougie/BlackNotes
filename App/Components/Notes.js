@@ -3,6 +3,8 @@ import ViewNote from './ViewNote';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
 import Swipeout from 'react-native-swipeout';
+import EmptyView from './EmptyView.js';
+import LoadingView from './LoadingView.js';
 import { invert } from 'lodash';
 
 let {
@@ -29,25 +31,6 @@ let styles = StyleSheet.create({
     flex: 2,
     fontSize: 22,
     padding: 15,
-  },
-  loading: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emptyView: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 50,
-  },
-  emptyText: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: '#A9A9A9',
-  },
-  boldText: {
-    fontWeight: 'bold',
   },
 });
 
@@ -90,25 +73,6 @@ class Notes extends React.Component{
           isLoading: false,
         });
       });
-  }
-
-  renderLoadingView() {
-    return (
-      <View style={styles.loading}>
-        <ActivityIndicatorIOS size='large'/>
-        <Text>Loading notes...</Text>
-      </View>
-    );
-  }
-
-  renderEmptyView() {
-    return (
-      <View style={styles.emptyView}>
-        <Text style={styles.emptyText}>
-          Your notes are empty, click the <Text style={styles.boldText}>Create Note</Text> Button to add your first.
-        </Text>
-      </View>
-    );
   }
 
   renderRow(rowData) {
@@ -163,11 +127,11 @@ class Notes extends React.Component{
 
   render() {
     if (this.state.isLoading) {
-      return this.renderLoadingView();
+      return <LoadingView />
     }
 
     if (this.state.empty) {
-      return this.renderEmptyView();
+      return <EmptyView />
     }
 
     return (
