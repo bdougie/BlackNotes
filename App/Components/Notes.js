@@ -35,7 +35,20 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  touchableButton: {},
+  emptyView: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 50,
+  },
+  emptyText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#A9A9A9',
+  },
+  boldText: {
+    fontWeight: 'bold',
+  },
 });
 
 class Notes extends React.Component{
@@ -45,6 +58,7 @@ class Notes extends React.Component{
     this.ds = new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2})
     this.state = {
       isLoading: true,
+      empty: false,
       rawData: {},
       note: '',
       error: ''
@@ -65,10 +79,17 @@ class Notes extends React.Component{
         this.setState({
           dataSource: this.ds.cloneWithRows(data),
           isLoading: false,
+          empty: false,
           rawData: data,
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error)
+        this.setState({
+          empty: true,
+          isLoading: false,
+        });
+      });
   }
 
   renderLoadingView() {
@@ -76,6 +97,16 @@ class Notes extends React.Component{
       <View style={styles.loading}>
         <ActivityIndicatorIOS size='large'/>
         <Text>Loading notes...</Text>
+      </View>
+    );
+  }
+
+  renderEmptyView() {
+    return (
+      <View style={styles.emptyView}>
+        <Text style={styles.emptyText}>
+          Your notes are empty, click the <Text style={styles.boldText}>Create Note</Text> Button to add your first.
+        </Text>
       </View>
     );
   }
@@ -133,6 +164,10 @@ class Notes extends React.Component{
   render() {
     if (this.state.isLoading) {
       return this.renderLoadingView();
+    }
+
+    if (this.state.empty) {
+      return this.renderEmptyView();
     }
 
     return (
