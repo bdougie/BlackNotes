@@ -1,2 +1,4 @@
 # Black Notes
-a react-native app
+A ReactNative note app
+
+![app example](http://i.imgur.com/zj361Dml.png)
