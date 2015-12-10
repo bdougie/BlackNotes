@@ -102,9 +102,6 @@ class Notes extends React.Component{
 
   deleteNote(rowData) {
     api.deleteNote(rowData, this.noteId(rowData));
-    this.setState({
-      isLoading: true,
-    });
   }
 
   viewNote(rowData) {
