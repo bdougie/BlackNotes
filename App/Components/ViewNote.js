@@ -1,5 +1,6 @@
 import React from 'react-native';
 import api from './../Lib/Api';
+import Separator from './../Helpers/Separator';
 
 let {
   View,
@@ -25,9 +26,14 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  searchInput: {
+  titleInput: {
     alignItems: 'stretch',
-    height: 60,
+    padding: 10,
+    fontSize: 18,
+    color: '#111',
+    flex: 1
+  },
+  noteInput: {
     padding: 10,
     fontSize: 18,
     color: '#111',
@@ -40,8 +46,15 @@ class ViewNote extends React.Component{
     super(props);
     this.state = {
       note: '',
+      title: '',
       error: '',
     }
+  }
+
+  handleTitleChange(e) {
+    this.setState({
+      title: e.nativeEvent.text
+    })
   }
 
   handleChange(e) {
@@ -51,20 +64,30 @@ class ViewNote extends React.Component{
   }
 
   handleSubmit() {
+    let title = this.state.title;
     let note = this.state.note;
-    this.setState({note:''});
-    api.updateNote(note, this.props.noteId)
+
+    title = title === '' ? this.props.noteTitle : title
+    note = note === '' ? this.props.noteText : note
+
+    api.updateNote(title, note, this.props.noteId)
     this.props.navigator.pop();
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <TextInput
+          style={styles.titleInput}
+          value={this.props.noteTitle}
+          onChange={this.handleTitleChange.bind(this)}
+          placeholder="Note Title is empty..." />
+       <Separator />
        <TextInput
-            style={styles.searchInput}
+            style={styles.noteInput}
             value={this.props.noteText}
             onChange={this.handleChange.bind(this)}
-            placeholder="New Note" />
+            placeholder="Note is empty..." />
         <TouchableHighlight
             style={styles.button}
             onPress={this.handleSubmit.bind(this)}
@@ -78,6 +101,7 @@ class ViewNote extends React.Component{
 
 ViewNote.propTypes = {
   noteText: React.PropTypes.string.isRequired,
+  noteTitle: React.PropTypes.string.isRequired,
   noteId: React.PropTypes.string.isRequired,
 }
 

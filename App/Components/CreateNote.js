@@ -1,5 +1,9 @@
 import React from 'react-native';
 import api from './../Lib/Api';
+import Separator from './../Helpers/Separator';
+// Todo: add Async storage to save data on reload
+// https://github.com/thewei/react-native-store
+// https://blog.nraboy.com/2015/09/saving-data-in-your-react-native-mobile-application/
 
 let {
   View,
@@ -25,9 +29,14 @@ let styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  noteInput: {
+  titleInput: {
     alignItems: 'stretch',
-    height: 600,
+    padding: 10,
+    fontSize: 18,
+    color: '#111',
+    flex: 1
+  },
+  noteInput: {
     padding: 10,
     fontSize: 18,
     color: '#111',
@@ -40,11 +49,18 @@ class CreateNote extends React.Component{
     super(props);
     this.state = {
       note: '',
-      error: ''
+      title: '',
+      error: '',
     }
   }
 
-  handleChange(e) {
+  handleTitleChange(e) {
+    this.setState({
+      title: e.nativeEvent.text
+    })
+  }
+
+  handleBodyChange(e) {
     this.setState({
       note: e.nativeEvent.text
     })
@@ -52,29 +68,34 @@ class CreateNote extends React.Component{
 
   handleSubmit() {
     let note = this.state.note;
-    this.setState({note:''});
-    api.addNote(note)
-      .then(() => {
-        this.props.navigator.pop();
-      })
-      .catch((error) => {
-        console.log('failed', error);
-        this.setState({error})
-      });
+    let title = this.state.title;
+    this.setState({
+      note:'',
+      title:'',
+    });
+    api.addNote(note, title);
+    this.props.navigator.pop();
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <TextInput
+          style={styles.titleInput}
+          value={this.state.title}
+          onChange={this.handleTitleChange.bind(this)}
+          placeholder="Note Title" />
+       <Separator />
        <TextInput
         autoFocus={true}
         style={styles.noteInput}
         value={this.state.note}
-        onChange={this.handleChange.bind(this)}
+        onChange={this.handleBodyChange.bind(this)}
         placeholder="Start your note here..." />
         <TouchableHighlight
             style={styles.button}
             onPress={this.handleSubmit.bind(this)}
+            autoCorrect={true}
             underlayColor="#88D4F5">
           <Text style={styles.buttonText}>Save</Text>
         </TouchableHighlight>

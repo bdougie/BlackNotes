@@ -56,22 +56,22 @@ class Notes extends React.Component{
   }
 
   fetchData() {
-    api.getNotes()
-      .then((data) => {
-        this.setState({
-          dataSource: this.ds.cloneWithRows(data),
-          isLoading: false,
-          empty: false,
-          rawData: data,
-        });
-      })
-      .catch((error) => {
-        console.log(error)
-        this.setState({
-          empty: true,
-          isLoading: false,
-        });
-      });
+   api.getNotes()
+     .then((data) => {
+       this.setState({
+         dataSource: this.ds.cloneWithRows(data),
+         isLoading: false,
+         empty: false,
+         rawData: data,
+       });
+     })
+     .catch((error) => {
+       console.log(error)
+       this.setState({
+         empty: true,
+         isLoading: false,
+       });
+     });
   }
 
   renderRow(rowData) {
@@ -91,7 +91,7 @@ class Notes extends React.Component{
           onPress={this.viewNote.bind(this, rowData)} >
           <View>
             <View style={styles.rowContainer}>
-              <Text style={styles.note}> {rowData} </Text>
+              <Text style={styles.note}> {rowData.title} </Text>
             </View>
             <Separator />
           </View>
@@ -109,7 +109,8 @@ class Notes extends React.Component{
       title: 'The Note',
       component: ViewNote,
       passProps: {
-        noteText: rowData,
+        noteText: rowData.body,
+        noteTitle: rowData.title,
         noteId: this.noteId(rowData),
       }
     });
