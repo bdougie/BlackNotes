@@ -18,7 +18,6 @@ let styles = StyleSheet.create({
     flex: 1,
   },
   titleInput: {
-    alignItems: 'stretch',
     padding: 10,
     fontSize: 18,
     color: '#111',
@@ -103,6 +102,8 @@ class ViewNote extends React.Component{
        <TextInput
             style={styles.noteInput}
             value={this.state.note}
+            multiline={true}
+            onLayout={0,0,300,600}
             onChange={this.handleChange.bind(this)}
             placeholder="Note is empty..." />
       </View>
@@ -117,6 +118,3 @@ ViewNote.propTypes = {
 }
 
 export default ViewNote;
-
-
-

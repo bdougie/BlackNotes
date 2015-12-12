@@ -27,7 +27,6 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titleInput: {
-    alignItems: 'stretch',
     padding: 10,
     fontSize: 18,
     color: '#111',
@@ -81,12 +80,14 @@ class CreateNote extends React.Component{
           style={styles.titleInput}
           value={this.state.title}
           onChange={this.handleTitleChange.bind(this)}
-          placeholder="Note Title" />
+          placeholder="Title" />
        <Separator />
        <TextInput
         autoFocus={true}
         style={styles.noteInput}
         value={this.state.note}
+        multiline={true}
+        onLayout={0,0,300,600}
         onChange={this.handleBodyChange.bind(this)}
         placeholder="Start your note here..." />
         <TouchableHighlight
