@@ -9,8 +9,9 @@ let {
   TextInput,
   StyleSheet,
   TouchableHighlight,
-  AsyncStorage,
 } = React;
+
+let ShareManager = React.NativeModules.ShareManager;
 
 let styles = StyleSheet.create({
   container: {
@@ -28,6 +29,17 @@ let styles = StyleSheet.create({
     fontSize: 18,
     color: '#111',
     flex: 18
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white'
+  },
+  button: {
+    height: 60,
+    backgroundColor: '#48BBEC',
+    flex: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -80,6 +92,11 @@ class ViewNote extends React.Component{
     );
   }
 
+  share() {
+    let noteText = this.state.note;
+    ShareManager.note(noteText);
+  }
+
   cacheNoteTitle(value) {
     simpleStore.save('title', value)
     .catch((error) => console.log('error'));
@@ -106,6 +123,12 @@ class ViewNote extends React.Component{
             onLayout={0,0,300,600}
             onChange={this.handleChange.bind(this)}
             placeholder="Note is empty..." />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.share.bind(this)}
+          underlayColor="#88D4F5">
+          <Text style={styles.buttonText}>Share</Text>
+        </TouchableHighlight>
       </View>
     );
   }
