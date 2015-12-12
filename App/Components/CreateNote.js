@@ -1,9 +1,6 @@
 import React from 'react-native';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
-// Todo: add Async storage to save data on reload
-// https://github.com/thewei/react-native-store
-// https://blog.nraboy.com/2015/09/saving-data-in-your-react-native-mobile-application/
 
 let {
   View,

@@ -1,6 +1,7 @@
 import React from 'react-native';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
+import simpleStore from 'react-native-simple-store';
 
 let {
   View,
@@ -8,23 +9,13 @@ let {
   TextInput,
   StyleSheet,
   TouchableHighlight,
+  AsyncStorage,
 } = React;
 
 let styles = StyleSheet.create({
   container: {
     marginTop: 65,
     flex: 1,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: 'white'
-  },
-  button: {
-    height: 60,
-    backgroundColor: '#48BBEC',
-    flex: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   titleInput: {
     alignItems: 'stretch',
@@ -44,6 +35,7 @@ let styles = StyleSheet.create({
 class ViewNote extends React.Component{
   constructor(props) {
     super(props);
+
     this.state = {
       note: '',
       title: '',
@@ -51,27 +43,52 @@ class ViewNote extends React.Component{
     }
   }
 
+  componentDidMount() {
+    let key = this.props.noteId
+    console.log(key);
+
+    this.setState({title: this.props.noteTitle});
+    this.setState({note: this.props.noteText});
+  }
+
   handleTitleChange(e) {
+    let value = e.nativeEvent.text;
+    this.cacheNoteTitle(value);
+
     this.setState({
-      title: e.nativeEvent.text
-    })
+      title: value
+    });
+
+    api.updateNote(
+      value,
+      this.state.note,
+      this.props.noteId
+    );
   }
 
   handleChange(e) {
+    let value = e.nativeEvent.text
+    this.cacheNoteText(value);
+
     this.setState({
-      note: e.nativeEvent.text
-    })
+      note: value
+    });
+
+    api.updateNote(
+      this.state.title,
+      value,
+      this.props.noteId
+    );
   }
 
-  handleSubmit() {
-    let title = this.state.title;
-    let note = this.state.note;
+  cacheNoteTitle(value) {
+    simpleStore.save('title', value)
+    .catch((error) => console.log('error'));
+  }
 
-    title = title === '' ? this.props.noteTitle : title
-    note = note === '' ? this.props.noteText : note
-
-    api.updateNote(title, note, this.props.noteId)
-    this.props.navigator.pop();
+  cacheNoteText(value) {
+    simpleStore.save('notes', value)
+    .catch((error) => console.log('error'));
   }
 
   render() {
@@ -79,21 +96,15 @@ class ViewNote extends React.Component{
       <View style={styles.container}>
         <TextInput
           style={styles.titleInput}
-          value={this.props.noteTitle}
+          value={this.state.title}
           onChange={this.handleTitleChange.bind(this)}
           placeholder="Note Title is empty..." />
        <Separator />
        <TextInput
             style={styles.noteInput}
-            value={this.props.noteText}
+            value={this.state.note}
             onChange={this.handleChange.bind(this)}
             placeholder="Note is empty..." />
-        <TouchableHighlight
-            style={styles.button}
-            onPress={this.handleSubmit.bind(this)}
-            underlayColor="#88D4F5">
-              <Text style={styles.buttonText}>Save</Text>
-        </TouchableHighlight>
       </View>
     );
   }

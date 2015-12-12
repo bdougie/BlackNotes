@@ -5,7 +5,7 @@ import Separator from './../Helpers/Separator';
 import Swipeout from 'react-native-swipeout';
 import EmptyView from './EmptyView.js';
 import LoadingView from './LoadingView.js';
-import { invert } from 'lodash';
+import { invert, findKey } from 'lodash';
 
 let {
   View,
@@ -47,11 +47,11 @@ class Notes extends React.Component{
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     this.fetchData();
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     this.fetchData();
   }
 
@@ -116,10 +116,9 @@ class Notes extends React.Component{
     });
   }
 
-  noteId(noteText) {
+  noteId(note) {
     let rawData = this.state.rawData;
-    let invertedRawData = invert(rawData);
-    return invertedRawData[noteText]
+    return findKey(rawData, note)
   }
 
   render() {
