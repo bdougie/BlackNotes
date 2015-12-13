@@ -106,7 +106,6 @@ class Notes extends React.Component{
 
   viewNote(rowData) {
     this.props.navigator.push({
-      title: 'The Note',
       component: ViewNote,
       passProps: {
         noteText: rowData.body,
