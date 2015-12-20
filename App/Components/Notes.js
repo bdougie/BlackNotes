@@ -54,7 +54,8 @@ class Notes extends React.Component{
       empty: false,
       rawData: {},
       note: '',
-      error: ''
+      error: '',
+      searchText: '',
     }
   }
 
@@ -62,8 +63,10 @@ class Notes extends React.Component{
     this.fetchData();
   }
 
-  componentUpdate() {
-    // this.fetchData();
+  componentDidUpdate() {
+    if (this.state.searchText === '') {
+      this.fetchData();
+    }
   }
 
   filterNotes(searchText, notes) {
@@ -95,6 +98,7 @@ class Notes extends React.Component{
 
   setSearchText(e) {
     let searchText = e.nativeEvent.text;
+    this.setState({searchText});
 
     base.fetch('notes', {
       context: this,
@@ -136,6 +140,7 @@ class Notes extends React.Component{
   }
 
   deleteNote(rowData) {
+    this.setState({searchText:''});
     api.deleteNote(rowData, this.noteId(rowData));
   }
 
@@ -168,6 +173,7 @@ class Notes extends React.Component{
       <View style={styles.container}>
         <TextInput
           style={styles.searchBar}
+          value={this.state.searchText}
           onChange={this.setSearchText.bind(this)}
           placeholder="Search" />
         <ListView
