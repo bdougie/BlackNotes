@@ -5,7 +5,10 @@ import Separator from './../Helpers/Separator';
 import Swipeout from 'react-native-swipeout';
 import EmptyView from './EmptyView.js';
 import LoadingView from './LoadingView.js';
-import { invert, findKey } from 'lodash';
+import { filter, indexOf, invert, findKey } from 'lodash';
+import Rebase from 're-base';
+
+let base = Rebase.createClass('https://blacknotes.firebaseio.com/testUser/');
 
 let {
   View,
@@ -13,6 +16,7 @@ let {
   ListView,
   StyleSheet,
   TouchableHighlight,
+  TextInput,
 } = React;
 
 let styles = StyleSheet.create({
@@ -20,7 +24,6 @@ let styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    marginTop: 50,
     height: 590,
   },
   rowContainer: {
@@ -30,6 +33,14 @@ let styles = StyleSheet.create({
     flex: 2,
     fontSize: 22,
     padding: 15,
+  },
+  searchBar: {
+    paddingLeft: 30,
+    fontSize: 22,
+    height: 10,
+    flex: .1,
+    borderWidth: 9,
+    borderColor: '#E4E4E4',
   },
 });
 
@@ -51,8 +62,16 @@ class Notes extends React.Component{
     this.fetchData();
   }
 
-  componentDidUpdate() {
-    this.fetchData();
+  componentUpdate() {
+    // this.fetchData();
+  }
+
+  filterNotes(searchText, notes) {
+    let text = searchText.toLowerCase();
+    return filter(notes, (n) => {
+      let note = n.body.toLowerCase();
+      return note.search(text) !== -1;
+    });
   }
 
   fetchData() {
@@ -68,10 +87,26 @@ class Notes extends React.Component{
      .catch((error) => {
        console.log(error)
        this.setState({
-         empty: true,
+           empty: true,
          isLoading: false,
        });
      });
+  }
+
+  setSearchText(e) {
+    let searchText = e.nativeEvent.text;
+
+    base.fetch('notes', {
+      context: this,
+      asArray: true,
+      then(data){
+        let filteredData = this.filterNotes(searchText, data);
+        this.setState({
+          dataSource: this.ds.cloneWithRows(filteredData),
+          rawData: data,
+        });
+      }
+    });
   }
 
   renderRow(rowData) {
@@ -131,6 +166,10 @@ class Notes extends React.Component{
 
     return (
       <View style={styles.container}>
+        <TextInput
+          style={styles.searchBar}
+          onChange={this.setSearchText.bind(this)}
+          placeholder="Search" />
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderRow.bind(this)} />

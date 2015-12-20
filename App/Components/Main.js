@@ -14,6 +14,9 @@ let styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  margin: {
+    marginTop: 50,
+  },
   footerContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -60,8 +63,9 @@ class Main extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text></Text>
-        <Notes navigator={this.props.navigator} />
+        <Text style={styles.margin}/>
+        <Notes
+          navigator={this.props.navigator} />
         {this.footer()}
       </View>
     )
