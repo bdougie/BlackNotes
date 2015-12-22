@@ -16,10 +16,9 @@ let styles = StyleSheet.create({
 });
 
 export default class Separator extends React.Component{
-  render(){
+  render() {
     return (
-      <View style={styles.separator}>
-      </View>
+      <View style={styles.separator} />
     );
   }
 };

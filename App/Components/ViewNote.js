@@ -2,6 +2,8 @@ import React from 'react-native';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
 import simpleStore from 'react-native-simple-store';
+import AutoLinker from 'autolinker';
+import HTMLView from 'react-native-htmlview';
 
 let {
   View,
@@ -107,22 +109,34 @@ class ViewNote extends React.Component{
     .catch((error) => console.log('error'));
   }
 
+  renderMarkUp() {
+    let { noteText } = this.props
+    let htmlRenderedNote = AutoLinker.link(noteText, {phone: true, email: true});
+    return (
+      <View style={styles.noteInput}>
+        <HTMLView
+          value={htmlRenderedNote}
+          onLinkPress={(url) => console.log('navigating to: ', url)} />
+      </View>
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
-          style={styles.titleInput}
-          value={this.state.title}
-          onChange={this.handleTitleChange.bind(this)}
-          placeholder="Note Title is empty..." />
+       <TextInput
+         style={styles.titleInput}
+         value={this.state.title}
+         onChange={this.handleTitleChange.bind(this)}
+         placeholder="Note Title is empty..."/>
        <Separator />
        <TextInput
-            style={styles.noteInput}
-            value={this.state.note}
-            multiline={true}
-            onLayout={0,0,300,600}
-            onChange={this.handleChange.bind(this)}
-            placeholder="Note is empty..." />
+          style={styles.noteInput}
+          multiline={true}
+          onLayout={0,0,300,600}
+          onChange={this.handleChange.bind(this)}>
+          {this.renderMarkUp()}
+        </TextInput>
         <TouchableHighlight
           style={styles.button}
           onPress={this.share.bind(this)}
