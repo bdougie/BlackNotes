@@ -1,6 +1,7 @@
 import React from 'react-native';
 import api from './../Lib/Api';
 import Separator from './../Helpers/Separator';
+import dismissKeyboard from 'dismissKeyboard';
 
 let {
   View,
@@ -8,7 +9,6 @@ let {
   TextInput,
   StyleSheet,
   TouchableHighlight,
-  TouchableWithoutFeedback,
 } = React;
 
 let styles = StyleSheet.create({
@@ -77,18 +77,23 @@ class CreateNote extends React.Component{
     this.props.navigator.pop();
   }
 
+  dismiss() {
+    dismissKeyboard();
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <TextInput
           style={styles.titleInput}
           value={this.state.title}
+          returnKeyType={'done'}
           onChange={this.handleTitleChange.bind(this)}
+          onSubmitEditing={() => this.dismiss()}
           placeholder="Title" />
        <Separator />
        <TextInput
         autoFocus={true}
-        enablesReturnKeyAutomatically={true}
         style={styles.noteInput}
         value={this.state.note}
         multiline={true}
@@ -98,6 +103,7 @@ class CreateNote extends React.Component{
         <TouchableHighlight
             style={styles.button}
             onPress={this.handleSubmit.bind(this)}
+            blurOnSubmit={true}
             autoCorrect={true}
             underlayColor="#88D4F5">
           <Text style={styles.buttonText}>Save</Text>
