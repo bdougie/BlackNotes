@@ -9,6 +9,7 @@ import { filter, indexOf, invert, findKey } from 'lodash';
 import Rebase from 're-base';
 
 let base = Rebase.createClass('https://blacknotes.firebaseio.com/testUser/');
+let ShareManager = React.NativeModules.ShareManager;
 
 let {
   View,
@@ -144,9 +145,15 @@ class Notes extends React.Component{
     api.deleteNote(rowData, this.noteId(rowData));
   }
 
+  share(noteText) {
+    ShareManager.note(noteText);
+  }
+
   viewNote(rowData) {
     this.props.navigator.push({
       component: ViewNote,
+      rightButtonTitle: 'Share',
+      onRightButtonPress: () => this.share(rowData.body),
       passProps: {
         noteText: rowData.body,
         noteTitle: rowData.title,
