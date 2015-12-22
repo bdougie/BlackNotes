@@ -8,12 +8,16 @@ let {
   TextInput,
   StyleSheet,
   TouchableHighlight,
+  TouchableWithoutFeedback,
 } = React;
 
 let styles = StyleSheet.create({
   container: {
     marginTop: 65,
     flex: 1,
+  },
+  emptyTouch: {
+    backgroundColor: 'red',
   },
   buttonText: {
     fontSize: 18,
@@ -84,6 +88,7 @@ class CreateNote extends React.Component{
        <Separator />
        <TextInput
         autoFocus={true}
+        enablesReturnKeyAutomatically={true}
         style={styles.noteInput}
         value={this.state.note}
         multiline={true}

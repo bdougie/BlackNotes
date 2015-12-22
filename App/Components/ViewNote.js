@@ -11,8 +11,6 @@ let {
   TouchableHighlight,
 } = React;
 
-let ShareManager = React.NativeModules.ShareManager;
-
 let styles = StyleSheet.create({
   container: {
     marginTop: 65,
@@ -92,11 +90,6 @@ class ViewNote extends React.Component{
     );
   }
 
-  share() {
-    let noteText = this.state.note;
-    ShareManager.note(noteText);
-  }
-
   cacheNoteTitle(value) {
     simpleStore.save('title', value)
     .catch((error) => console.log('error'));
@@ -119,16 +112,11 @@ class ViewNote extends React.Component{
        <TextInput
             style={styles.noteInput}
             value={this.state.note}
+            enablesReturnKeyAutomatically={true}
             multiline={true}
             onLayout={0,0,300,600}
             onChange={this.handleChange.bind(this)}
             placeholder="Note is empty..." />
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this.share.bind(this)}
-          underlayColor="#88D4F5">
-          <Text style={styles.buttonText}>Share</Text>
-        </TouchableHighlight>
       </View>
     );
   }

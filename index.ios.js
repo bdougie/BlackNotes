@@ -1,5 +1,6 @@
 import React from 'react-native';
 import Main from './App/Components/Main';
+import CreateNote from './App/Components/CreateNote';
 
 let {
   AppRegistry,
@@ -17,20 +18,23 @@ let styles = StyleSheet.create({
 });
 
 class BlackNotes extends React.Component {
-  createNewNote() {
-    this.props.navigator.push({
+  createRoute() {
+    this.refs.nav.push({
       component: CreateNote,
-      title: 'New Note'
+      title: 'New Note',
     })
   }
 
   render() {
     return (
       <NavigatorIOS
-      style={styles.container}
+        ref="nav"
+        style={styles.container}
         initialRoute={{
           title: 'Black Notes',
           component: Main,
+          rightButtonTitle: 'Add',
+          onRightButtonPress: this.createRoute.bind(this)
         }} />
     );
   }
