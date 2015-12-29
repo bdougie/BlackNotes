@@ -22,6 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
+		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTShareManager.h; path = BlackNotes/RCTShareManager.h; sourceTree = "<group>"; };
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
+		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
+		33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTURLHandler.m; path = BlackNotes/RCTURLHandler.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,6 +247,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */,
 				3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */,
+				33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */,
+				33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */,
 			);
 			name = BlackNotes;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */,
 				3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
