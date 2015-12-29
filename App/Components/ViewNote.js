@@ -1,7 +1,6 @@
 import React from 'react-native';
-import api from './../Lib/Api';
+import EditNote from './EditNote';
 import Separator from './../Helpers/Separator';
-import simpleStore from 'react-native-simple-store';
 import AutoLinker from 'autolinker';
 import HTMLView from 'react-native-htmlview';
 
@@ -11,23 +10,24 @@ let {
   TextInput,
   StyleSheet,
   TouchableHighlight,
+  LinkingIOS,
 } = React;
+
+let URLHandler = React.NativeModules.URLHandler;
 
 let styles = StyleSheet.create({
   container: {
     marginTop: 65,
     flex: 1,
   },
-  titleInput: {
+  titleText: {
     padding: 10,
     fontSize: 18,
     color: '#111',
     flex: 1
   },
-  noteInput: {
+  noteText: {
     padding: 10,
-    fontSize: 18,
-    color: '#111',
     flex: 18
   },
   buttonText: {
@@ -56,60 +56,30 @@ class ViewNote extends React.Component{
 
   componentDidMount() {
     let key = this.props.noteId
-    console.log(key);
 
     this.setState({title: this.props.noteTitle});
     this.setState({note: this.props.noteText});
   }
 
-  handleTitleChange(e) {
-    let value = e.nativeEvent.text;
-    this.cacheNoteTitle(value);
-
-    this.setState({
-      title: value
+  handleURL(url) {
+    LinkingIOS.canOpenURL(url, (supported) => {
+      if (!supported) {
+        URLHandler.open(url);
+        console.log(`${url}: will only open on device and not simulator`);
+      } else {
+        LinkingIOS.openURL(url)
+      }
     });
-
-    api.updateNote(
-      value,
-      this.state.note,
-      this.props.noteId
-    );
-  }
-
-  handleChange(e) {
-    let value = e.nativeEvent.text
-    this.cacheNoteText(value);
-
-    this.setState({
-      note: value
-    });
-
-    api.updateNote(
-      this.state.title,
-      value,
-      this.props.noteId
-    );
-  }
-
-  cacheNoteTitle(value) {
-    simpleStore.save('title', value)
-    .catch((error) => console.log('error'));
-  }
-
-  cacheNoteText(value) {
-    simpleStore.save('notes', value)
-    .catch((error) => console.log('error'));
   }
 
   renderMarkUp() {
     let { noteText } = this.props
     let htmlRenderedNote = AutoLinker.link(noteText, {phone: true, email: true});
     return (
-      <View style={styles.noteInput}>
+      <View>
         <HTMLView
           value={htmlRenderedNote}
-          onLinkPress={(url) => console.log('navigating to: ', url)} />
+          onLinkPress={(url) => this.handleURL(url) } />
       </View>
     );
   }
@@ -117,20 +87,30 @@ class ViewNote extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-       <TextInput
-         style={styles.titleInput}
-         value={this.state.title}
-         onChange={this.handleTitleChange.bind(this)}
-         placeholder="Note Title is empty..."/>
+       <Text style={styles.titleText}>
+         {this.state.title}
+       </Text>
        <Separator />
-       <TextInput
-         style={styles.noteInput}
-         multiline={true}
-         onLayout={0,0,300,600}
-         onChange={this.handleChange.bind(this)}>{this.renderMarkUp()}
-        </TextInput>
+       <TouchableHighlight
+        style={styles.noteText}
+        onPress={this.editNote.bind(this)}>
+         {this.renderMarkUp()}
+       </TouchableHighlight>
       </View>
     );
+  }
+
+  editNote(rowData) {
+    let { noteText, noteTitle, noteId } = this.props;
+
+    this.props.navigator.replace({
+      component: EditNote,
+      passProps: {
+        noteText: noteText,
+        noteTitle: noteTitle,
+        noteId: noteId,
+      }
+    });
   }
 }
 

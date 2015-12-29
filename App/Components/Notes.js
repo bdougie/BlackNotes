@@ -152,6 +152,7 @@ class Notes extends React.Component{
   viewNote(rowData) {
     this.props.navigator.push({
       component: ViewNote,
+      title: rowData.title,
       rightButtonTitle: 'Share',
       onRightButtonPress: () => this.share(rowData.body),
       passProps: {
