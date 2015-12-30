@@ -23,6 +23,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
 		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
+		33C8A7E21C3365BE00EB45FA /* libRNiCloudSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C8A7DF1C33649200EB45FA /* libRNiCloudSync.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,20 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		33C8A7DE1C33649200EB45FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46F1CB4E1B7011D50089DAE4;
+			remoteInfo = RNiCloudSync;
+		};
+		33C8A7E01C33649200EB45FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 46F1CB591B7011D50089DAE4;
+			remoteInfo = RNiCloudSyncTests;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -130,6 +145,7 @@
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
 		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
 		33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTURLHandler.m; path = BlackNotes/RCTURLHandler.m; sourceTree = "<group>"; };
+		33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNiCloudSync.xcodeproj; path = "../node_modules/react-native-icloud-sync/RNiCloudSync.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C8A7E21C3365BE00EB45FA /* libRNiCloudSync.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -261,6 +278,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		33C8A7D01C33649200EB45FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33C8A7DF1C33649200EB45FA /* libRNiCloudSync.a */,
+				33C8A7E11C33649200EB45FA /* RNiCloudSyncTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +298,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -421,6 +448,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 33C8A7D01C33649200EB45FA /* Products */;
+					ProjectRef = 33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -485,6 +516,20 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33C8A7DF1C33649200EB45FA /* libRNiCloudSync.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNiCloudSync.a;
+			remoteRef = 33C8A7DE1C33649200EB45FA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33C8A7E11C33649200EB45FA /* RNiCloudSyncTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RNiCloudSyncTests.xctest;
+			remoteRef = 33C8A7E01C33649200EB45FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
