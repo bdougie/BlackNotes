@@ -22,6 +22,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
+		33C6DA271C3540F9002F99DA /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */; };
+		33C6DA291C3540F9002F99DA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 33C6DA281C3540F9002F99DA /* Action.js */; };
+		33C6DA2D1C3540F9002F99DA /* CreateNote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C6DA241C3540F9002F99DA /* CreateNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,13 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		33C6DA2B1C3540F9002F99DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33C6DA231C3540F9002F99DA;
+			remoteInfo = CreateNote;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -105,6 +115,20 @@
 			remoteInfo = RCTText;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33C6DA3B1C3540F9002F99DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				33C6DA2D1C3540F9002F99DA /* CreateNote.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -128,6 +152,10 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTShareManager.h; path = BlackNotes/RCTShareManager.h; sourceTree = "<group>"; };
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
+		33C6DA241C3540F9002F99DA /* CreateNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CreateNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		33C6DA281C3540F9002F99DA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		33C6DA2A1C3540F9002F99DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
 		33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTURLHandler.m; path = BlackNotes/RCTURLHandler.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -156,6 +184,13 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33C6DA211C3540F9002F99DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +296,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		33C6DA251C3540F9002F99DA /* CreateNote */ = {
+			isa = PBXGroup;
+			children = (
+				33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */,
+				33C6DA281C3540F9002F99DA /* Action.js */,
+				33C6DA2A1C3540F9002F99DA /* Info.plist */,
+			);
+			path = CreateNote;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +345,7 @@
 				13B07FAE1A68108700A75B9A /* BlackNotes */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* BlackNotesTests */,
+				33C6DA251C3540F9002F99DA /* CreateNote */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 			);
 			indentWidth = 2;
@@ -311,6 +357,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* BlackNotes.app */,
 				00E356EE1AD99517003FC87E /* BlackNotesTests.xctest */,
+				33C6DA241C3540F9002F99DA /* CreateNote.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,15 +391,34 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				33C6DA3B1C3540F9002F99DA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				33C6DA2C1C3540F9002F99DA /* PBXTargetDependency */,
 			);
 			name = BlackNotes;
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* BlackNotes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		33C6DA231C3540F9002F99DA /* CreateNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33C6DA3A1C3540F9002F99DA /* Build configuration list for PBXNativeTarget "CreateNote" */;
+			buildPhases = (
+				33C6DA201C3540F9002F99DA /* Sources */,
+				33C6DA211C3540F9002F99DA /* Frameworks */,
+				33C6DA221C3540F9002F99DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreateNote;
+			productName = CreateNote;
+			productReference = 33C6DA241C3540F9002F99DA /* CreateNote.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -360,12 +426,16 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					33C6DA231C3540F9002F99DA = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -426,6 +496,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* BlackNotes */,
 				00E356ED1AD99517003FC87E /* BlackNotesTests */,
+				33C6DA231C3540F9002F99DA /* CreateNote */,
 			);
 		};
 /* End PBXProject section */
@@ -520,6 +591,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33C6DA221C3540F9002F99DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C6DA291C3540F9002F99DA /* Action.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -559,6 +638,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33C6DA201C3540F9002F99DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C6DA271C3540F9002F99DA /* ActionRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -566,6 +653,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* BlackNotes */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		33C6DA2C1C3540F9002F99DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33C6DA231C3540F9002F99DA /* CreateNote */;
+			targetProxy = 33C6DA2B1C3540F9002F99DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,6 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -640,6 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -649,6 +743,37 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = BlackNotes;
+			};
+			name = Release;
+		};
+		33C6DA2E1C3540F9002F99DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = CreateNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BlackNotes.CreateNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33C6DA2F1C3540F9002F99DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = CreateNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BlackNotes.CreateNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -755,6 +880,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33C6DA3A1C3540F9002F99DA /* Build configuration list for PBXNativeTarget "CreateNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33C6DA2E1C3540F9002F99DA /* Debug */,
+				33C6DA2F1C3540F9002F99DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
