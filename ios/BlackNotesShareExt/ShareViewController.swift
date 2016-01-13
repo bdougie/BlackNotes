@@ -33,22 +33,4 @@ class ShareViewController: SLComposeServiceViewController {
         // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         return []
     }
-
-    func post(url: NSURL, params: AnyObject) {
-      let params = String(params);
-      let request = NSMutableURLRequest(URL: url);
-      request.HTTPMethod = "POST"
-      request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
-      
-      let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-        data, response, error in
-        
-        //in case of error
-        if error != nil {
-          return
-        }
-      }
-      task.resume();
-    }
-
 }
