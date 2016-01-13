@@ -8,9 +8,10 @@
 
 import UIKit
 import Social
+import Firebase
 
 class ShareViewController: SLComposeServiceViewController {
-
+  
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         return true
@@ -18,9 +19,12 @@ class ShareViewController: SLComposeServiceViewController {
 
     override func didSelectPost() {
         // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
-        let url = NSURL(string: "https://blacknotes.firebaseio.com/testUser.json")
-        let note = contentText
-        post(url!, params: note)
+        let text = contentText
+        let ref = Firebase(url:"https://blacknotes.firebaseio.com/testUser.json")
+        let notesRef = ref.childByAppendingPath("notes")
+        let note = ["title": "gracehop", "body":"\(text)"]
+      
+        notesRef.childByAutoId().setValue(note)
       
         // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)

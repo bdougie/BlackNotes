@@ -1,0 +1,6 @@
+framework module Pods_BlackNotesShareExt {
+  umbrella header "Pods-BlackNotesShareExt-umbrella.h"
+
+  export *
+  module * { export * }
+}
