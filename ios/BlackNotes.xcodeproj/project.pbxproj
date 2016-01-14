@@ -22,8 +22,14 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
+		33C6DA271C3540F9002F99DA /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */; };
+		33C6DA291C3540F9002F99DA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 33C6DA281C3540F9002F99DA /* Action.js */; };
+		33C6DA2D1C3540F9002F99DA /* CreateNote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C6DA241C3540F9002F99DA /* CreateNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
-		33C8A7E21C3365BE00EB45FA /* libRNiCloudSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C8A7DF1C33649200EB45FA /* libRNiCloudSync.a */; };
+		33DF64FC1C4698B100E7CD54 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF64FB1C4698B100E7CD54 /* ShareViewController.swift */; };
+		33DF64FF1C4698B100E7CD54 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DF64FD1C4698B100E7CD54 /* MainInterface.storyboard */; };
+		33DF65031C4698B100E7CD54 /* BlackNotesShareExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33DF64F91C4698B100E7CD54 /* BlackNotesShareExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		526F5C0142E3DB9CCA786C9E /* Pods_BlackNotesShareExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CE0D1904F0C1BEB97C550D /* Pods_BlackNotesShareExt.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -91,19 +97,12 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		33C8A7DE1C33649200EB45FA /* PBXContainerItemProxy */ = {
+		33DF65011C4698B100E7CD54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 46F1CB4E1B7011D50089DAE4;
-			remoteInfo = RNiCloudSync;
-		};
-		33C8A7E01C33649200EB45FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 46F1CB591B7011D50089DAE4;
-			remoteInfo = RNiCloudSyncTests;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33DF64F81C4698B100E7CD54;
+			remoteInfo = BlackNotesShareExt;
 		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -120,6 +119,20 @@
 			remoteInfo = RCTText;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33DF65111C4698B100E7CD54 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				33DF65031C4698B100E7CD54 /* BlackNotesShareExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
@@ -143,11 +156,21 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTShareManager.h; path = BlackNotes/RCTShareManager.h; sourceTree = "<group>"; };
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
+		33C6DA241C3540F9002F99DA /* CreateNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CreateNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		33C6DA281C3540F9002F99DA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		33C6DA2A1C3540F9002F99DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
 		33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTURLHandler.m; path = BlackNotes/RCTURLHandler.m; sourceTree = "<group>"; };
-		33C8A7CF1C33649200EB45FA /* RNiCloudSync.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNiCloudSync.xcodeproj; path = "../node_modules/react-native-icloud-sync/RNiCloudSync.xcodeproj"; sourceTree = "<group>"; };
+		33DF64F91C4698B100E7CD54 /* BlackNotesShareExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlackNotesShareExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33DF64FB1C4698B100E7CD54 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		33DF64FE1C4698B100E7CD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		33DF65001C4698B100E7CD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		668A51238BD2AD7B96417F1E /* Pods-BlackNotesShareExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackNotesShareExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlackNotesShareExt/Pods-BlackNotesShareExt.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		C4CE0D1904F0C1BEB97C550D /* Pods_BlackNotesShareExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackNotesShareExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43435E5A49375AF1A725B35 /* Pods-BlackNotesShareExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackNotesShareExt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlackNotesShareExt/Pods-BlackNotesShareExt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +196,14 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33DF64F61C4698B100E7CD54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526F5C0142E3DB9CCA786C9E /* Pods_BlackNotesShareExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,13 +309,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33C8A7D01C33649200EB45FA /* Products */ = {
+		2764C49205E4D79C77A51AE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33C8A7DF1C33649200EB45FA /* libRNiCloudSync.a */,
-				33C8A7E11C33649200EB45FA /* RNiCloudSyncTests.xctest */,
+				F43435E5A49375AF1A725B35 /* Pods-BlackNotesShareExt.debug.xcconfig */,
+				668A51238BD2AD7B96417F1E /* Pods-BlackNotesShareExt.release.xcconfig */,
 			);
-			name = Products;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		33DF64FA1C4698B100E7CD54 /* BlackNotesShareExt */ = {
+			isa = PBXGroup;
+			children = (
+				33DF64FB1C4698B100E7CD54 /* ShareViewController.swift */,
+				33DF64FD1C4698B100E7CD54 /* MainInterface.storyboard */,
+				33DF65001C4698B100E7CD54 /* Info.plist */,
+			);
+			path = BlackNotesShareExt;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -327,7 +368,10 @@
 				13B07FAE1A68108700A75B9A /* BlackNotes */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* BlackNotesTests */,
+				33DF64FA1C4698B100E7CD54 /* BlackNotesShareExt */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				2764C49205E4D79C77A51AE0 /* Pods */,
+				8DBEB559B952FAF232103ECB /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -338,8 +382,17 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* BlackNotes.app */,
 				00E356EE1AD99517003FC87E /* BlackNotesTests.xctest */,
+				33DF64F91C4698B100E7CD54 /* BlackNotesShareExt.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8DBEB559B952FAF232103ECB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4CE0D1904F0C1BEB97C550D /* Pods_BlackNotesShareExt.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,15 +424,37 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				33DF65111C4698B100E7CD54 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				33DF65021C4698B100E7CD54 /* PBXTargetDependency */,
 			);
 			name = BlackNotes;
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* BlackNotes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		33DF64F81C4698B100E7CD54 /* BlackNotesShareExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33DF65101C4698B100E7CD54 /* Build configuration list for PBXNativeTarget "BlackNotesShareExt" */;
+			buildPhases = (
+				BC976AAC1C9F088F6689F1DD /* Check Pods Manifest.lock */,
+				33DF64F51C4698B100E7CD54 /* Sources */,
+				33DF64F61C4698B100E7CD54 /* Frameworks */,
+				33DF64F71C4698B100E7CD54 /* Resources */,
+				B6EFC65F9EE325C8EF426064 /* Embed Pods Frameworks */,
+				F88F7C25F16452D049FF453D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlackNotesShareExt;
+			productName = BlackNotesShareExt;
+			productReference = 33DF64F91C4698B100E7CD54 /* BlackNotesShareExt.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -387,12 +462,16 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					33DF64F81C4698B100E7CD54 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -457,6 +536,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* BlackNotes */,
 				00E356ED1AD99517003FC87E /* BlackNotesTests */,
+				33DF64F81C4698B100E7CD54 /* BlackNotesShareExt */,
 			);
 		};
 /* End PBXProject section */
@@ -565,6 +645,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33DF64F71C4698B100E7CD54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33DF64FF1C4698B100E7CD54 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -581,6 +669,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		B6EFC65F9EE325C8EF426064 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackNotesShareExt/Pods-BlackNotesShareExt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC976AAC1C9F088F6689F1DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F88F7C25F16452D049FF453D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackNotesShareExt/Pods-BlackNotesShareExt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -604,6 +737,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33DF64F51C4698B100E7CD54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33DF64FC1C4698B100E7CD54 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -611,6 +752,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* BlackNotes */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		33DF65021C4698B100E7CD54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33DF64F81C4698B100E7CD54 /* BlackNotesShareExt */;
+			targetProxy = 33DF65011C4698B100E7CD54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -622,6 +768,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = BlackNotes;
+			sourceTree = "<group>";
+		};
+		33DF64FD1C4698B100E7CD54 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33DF64FE1C4698B100E7CD54 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -669,6 +823,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -685,6 +840,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -694,6 +850,39 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = BlackNotes;
+			};
+			name = Release;
+		};
+		33DF65041C4698B100E7CD54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F43435E5A49375AF1A725B35 /* Pods-BlackNotesShareExt.debug.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BlackNotesShareExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BlackNotes.BlackNotesShareExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33DF65051C4698B100E7CD54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 668A51238BD2AD7B96417F1E /* Pods-BlackNotesShareExt.release.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BlackNotesShareExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BlackNotes.BlackNotesShareExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -800,6 +989,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33DF65101C4698B100E7CD54 /* Build configuration list for PBXNativeTarget "BlackNotesShareExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DF65041C4698B100E7CD54 /* Debug */,
+				33DF65051C4698B100E7CD54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
