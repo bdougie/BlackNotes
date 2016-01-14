@@ -21,7 +21,7 @@ class ShareViewController: SLComposeServiceViewController {
         // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
         let text = contentText
         let notesRef = Firebase(url:"https://blacknotes.firebaseio.com/testUser/notes")
-        let note = ["title": "Created note", "body":"\(text)"]
+        let note = ["title": "Shared Note", "body":"\(text)"]
       
         notesRef.childByAutoId().setValue(note)
       
