@@ -22,6 +22,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
+		33C6DA271C3540F9002F99DA /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */; };
+		33C6DA291C3540F9002F99DA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 33C6DA281C3540F9002F99DA /* Action.js */; };
+		33C6DA2D1C3540F9002F99DA /* CreateNote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33C6DA241C3540F9002F99DA /* CreateNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
 		33DF64FC1C4698B100E7CD54 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF64FB1C4698B100E7CD54 /* ShareViewController.swift */; };
 		33DF64FF1C4698B100E7CD54 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DF64FD1C4698B100E7CD54 /* MainInterface.storyboard */; };
@@ -153,6 +156,10 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTShareManager.h; path = BlackNotes/RCTShareManager.h; sourceTree = "<group>"; };
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
+		33C6DA241C3540F9002F99DA /* CreateNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CreateNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C6DA261C3540F9002F99DA /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		33C6DA281C3540F9002F99DA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		33C6DA2A1C3540F9002F99DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
 		33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTURLHandler.m; path = BlackNotes/RCTURLHandler.m; sourceTree = "<group>"; };
 		33DF64F91C4698B100E7CD54 /* BlackNotesShareExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlackNotesShareExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
