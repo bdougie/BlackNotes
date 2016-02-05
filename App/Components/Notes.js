@@ -10,6 +10,7 @@ import Rebase from 're-base';
 
 let base = Rebase.createClass('https://blacknotes.firebaseio.com/testUser/');
 let ShareManager = React.NativeModules.ShareManager;
+let Documents = React.NativeModules.ICloudDocuments;
 
 let {
   View,
@@ -61,6 +62,9 @@ class Notes extends React.Component{
   }
 
   componentDidMount() {
+    // Token is nil
+    Documents.getICloudToken((err, token)=> console.log(err));
+
     this.fetchData();
   }
 
@@ -68,6 +72,16 @@ class Notes extends React.Component{
     if (this.state.searchText === '') {
       this.fetchData();
     }
+  }
+
+  componentWillUnmount() {
+    this.storeIcloudData();
+  }
+
+  storeIcloudData() {
+    let raw = this.state.rawData;
+    Documents.contentsAtPath(manifest,(err, raw)=>{}); // utf8 encoded
+    Documents.contentsOfDirectoryAtPath(path, (err, files)=>{});
   }
 
   filterNotes(searchText, notes) {
