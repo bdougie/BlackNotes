@@ -21,6 +21,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		331F5C111C6CD63F001B7FCC /* RCTICloudDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 331F5C101C6CD63F001B7FCC /* RCTICloudDocument.m */; };
 		3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */; };
 		33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */; };
 		33DF64FC1C4698B100E7CD54 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DF64FB1C4698B100E7CD54 /* ShareViewController.swift */; };
@@ -152,6 +153,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BlackNotes/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BlackNotes/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		331F5C101C6CD63F001B7FCC /* RCTICloudDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTICloudDocument.m; path = "../../../Desktop/react-native-icloud/RCTICloudDocument.m"; sourceTree = "<group>"; };
 		3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTShareManager.h; path = BlackNotes/RCTShareManager.h; sourceTree = "<group>"; };
 		3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCTShareManager.m; path = BlackNotes/RCTShareManager.m; sourceTree = "<group>"; };
 		33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTURLHandler.h; path = BlackNotes/RCTURLHandler.h; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				3388E2AA1C1CB0D200437A06 /* RCTShareManager.h */,
 				3388E2AB1C1CB0D200437A06 /* RCTShareManager.m */,
 				33C8A79A1C32E34B00EB45FA /* RCTURLHandler.h */,
+				331F5C101C6CD63F001B7FCC /* RCTICloudDocument.m */,
 				33C8A79B1C32E34B00EB45FA /* RCTURLHandler.m */,
 			);
 			name = BlackNotes;
@@ -720,6 +723,7 @@
 				33C8A79C1C32E34B00EB45FA /* RCTURLHandler.m in Sources */,
 				3388E2AC1C1CB0D200437A06 /* RCTShareManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				331F5C111C6CD63F001B7FCC /* RCTICloudDocument.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
