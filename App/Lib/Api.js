@@ -1,6 +1,6 @@
 import Firebase from 'firebase';
 
-let url = 'https://blacknotes.firebaseio.com/testUser/notes';
+let url = // YOUR FIREBASEURL HERE
 let ref = new Firebase(url);
 let jsonURL = `${url}.json`;
 
