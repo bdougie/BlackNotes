@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "081CCE203B259159FB8266D3A2C7FA1107DCBE47",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2968763FC0E00AA934B7CBA183CFAD90F2048A9A" : 0,
+    "081CCE203B259159FB8266D3A2C7FA1107DCBE47" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A4131D69-8564-4E9B-B630-AA0CD95D8827",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2968763FC0E00AA934B7CBA183CFAD90F2048A9A" : "react-native-icloud\/",
+    "081CCE203B259159FB8266D3A2C7FA1107DCBE47" : "BlackNotes\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BlackNotes",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/BlackNotes.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bdougie\/BlackNotes.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "081CCE203B259159FB8266D3A2C7FA1107DCBE47"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/watert\/react-native-icloud",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2968763FC0E00AA934B7CBA183CFAD90F2048A9A"
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 import Firebase from 'firebase';
+import dotenv from 'dotenv'
 
-let url = 'https://blacknotes.firebaseio.com/testUser/notes';
+dotenv();
+
+let url = process.env.FIREBASE_URL;
 let ref = new Firebase(url);
 let jsonURL = `${url}.json`;
 
