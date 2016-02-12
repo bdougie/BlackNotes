@@ -62,7 +62,6 @@ class Notes extends React.Component{
   }
 
   componentDidMount() {
-    // Token is nil
     Documents.getICloudToken((err, token)=> console.log(err));
 
     this.fetchData();
